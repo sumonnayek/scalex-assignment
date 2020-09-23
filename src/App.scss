@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+/* ----------Dashboard Table-------start------ */
+.table-wrapper {
+  /* margin-top: 30px; */
+  padding: 0 25px;
+  margin: 0 40px 40px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  box-shadow: 5px 5px 5px 5px #ebebeb;
+}
+.overflow-wrapper {
+  overflow-x: auto;
+}
+.table-heading {
+  font-size: 25px;
+}
+.table-container {
+  margin: 2em auto;
+  display: grid;
+  min-width: 900px;
+  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+}
+.table-header {
+  font-weight: 500;
+  padding: 5px 0;
+  background: #ebebeb;
+}
+
+.grid-cell {
+  /* border-right: solid 1px black; */
+  border-top: solid 1px #ebebeb;
+  padding: 5px 0;
+}
+
+/* ----------Dashboard Table-------end------ */
