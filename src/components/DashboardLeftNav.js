@@ -1,25 +1,28 @@
 import React from "react";
-import { useDispatch } from 'react-redux';
-import { push } from 'connected-react-router';
-import {logoutUser} from "../actions";
+import { useDispatch } from "react-redux";
+import { push } from "connected-react-router";
+import { logoutUser } from "../actions";
+var classNames = require("classnames");
+const DashboardLeftNav = (props) => {
+  const dispatch = useDispatch();
 
-function DashboardLeftNav() {
-    const dispatch = useDispatch();
-
-    const onSignOut = () => {
-        dispatch(logoutUser());
-        dispatch(push('/login'));
-    };
-    return (
-        <div className="left-nav">
-            <ul>
-                <li>Users</li>
-                <li>Dashboard</li>
-                <li>Logs</li>
-                <li onClick={onSignOut}>Signout</li>
-            </ul>
-        </div>
-    );
-}
+  const onSignOut = () => {
+    dispatch(logoutUser());
+    dispatch(push("/login"));
+  };
+  let btnCls = classNames("left-nav", "menu-transition", {
+    "left-nav-show": props.leftNavOpen,
+  });
+  return (
+    <div className={btnCls}>
+      <ul>
+        <li>Users</li>
+        <li>Dashboard</li>
+        <li>Logs</li>
+        <li onClick={onSignOut}>Signout</li>
+      </ul>
+    </div>
+  );
+};
 
 export default DashboardLeftNav;

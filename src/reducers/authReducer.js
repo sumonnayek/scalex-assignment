@@ -10,7 +10,10 @@ const initialState = { authenticated: false };
 const loginUser = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_USER_SUCCESS:
-      return { ...action.payload.userDetails, authenticated: true };
+      const {
+        payload: { userDetails },
+      } = action;
+      return { ...state, ...userDetails, authenticated: true };
     case LOGOUT_USER:
       return { authenticated: false };
     default:

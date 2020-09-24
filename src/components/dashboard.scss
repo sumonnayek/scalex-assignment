@@ -2,6 +2,20 @@
   display: grid;
   grid-template-columns: 20% 80%;
 }
+.toggle-button {
+  position: absolute;
+  display: none;
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  margin: 5px;
+
+  svg {
+    color: #a19b9b;
+    font-size: 25px;
+    cursor: pointer;
+  }
+}
 .left-nav {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -27,20 +41,35 @@
   overflow-y: auto;
 }
 @media only screen and (max-width: 768px) {
+  .dashboard-container {
+    display: block;
+  }
+  .toggle-button {
+    display: block;
+    z-index: 999;
+  }
   .left-nav {
-    display: none;
+    width: 200px;
+    position: fixed;
+    left: -200px;
+  }
+  .left-nav-show {
+    left: 0px;
+  }
+  .left-nav-hide {
+    left: 200px;
   }
   .dashboard-body-cont {
-    grid-column-start: 1;
-    grid-column-end: 3;
     overflow-y: auto;
+  }
+  .menu-transition {
+    transition: all 0.3s ease;
   }
 }
 @media only screen and (max-width: 1024px) {
   .user-info-wrapper {
     display: flex;
     flex-flow: column !important;
-    /* padding: 30px; */
   }
   .active-user-info-box {
     margin: 40px 40px 0px 40px !important;
@@ -52,7 +81,6 @@
 .user-info-wrapper {
   display: flex;
   flex-flow: row;
-  /* padding: 30px; */
 }
 .active-user-info-box {
   padding: 0px 40px;

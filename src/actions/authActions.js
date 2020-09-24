@@ -20,7 +20,7 @@ export const loginUser = (cred) => {
   });
   return (dispatch) => {
     dispatch(loginUserRequest());
-    fetch(`https://ic3haoorgj.execute-api.ap-south-1.amazonaws.com/api/auth`, {
+    return fetch(`https://ic3haoorgj.execute-api.ap-south-1.amazonaws.com/api/auth`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
